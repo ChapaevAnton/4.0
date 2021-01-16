@@ -2,22 +2,21 @@
 public class Tank {
     private int horizontalX;
     private int horizontalY;
-    private int rotation;
+    private int rotation = 90;
+    private int fuel;
 
     Tank() {
-        horizontalX = 0;
-        horizontalY = 0;
-        rotation = 0;
+        this(0, 0, 100);
     }
 
     Tank(int horizontalX, int horizontalY) {
-        this.horizontalX = horizontalX;
-        this.horizontalY = horizontalY;
+        this(horizontalX, horizontalY, 100);
     }
 
-    Tank(int horizontalX, int horizontalY, int rotation) {
-        this(horizontalX, horizontalY);
-        this.rotation = rotation;
+    Tank(int horizontalX, int horizontalY, int fuel) {
+        this.horizontalX = horizontalX;
+        this.horizontalY = horizontalY;
+        this.fuel = fuel;
     }
 
     /**
@@ -26,13 +25,27 @@ public class Tank {
      * @see Tank#goForward(int)
      * {@link #rotation}
      * Y axis
-     * rotation = 0 - forward - default
+     * rotation = 0 - forward
      * rotation = 180 - back
      * X axis
-     * rotation = 90 - right
+     * rotation = 90 - right - default
      * rotation = 270 - left
      */
     public void goForward(int move) {
+        //TODO
+        // The Tank is at 100, 0 now
+        // The Tank is at 110, 10 now.
+        // The Tank is at 220, 30 now.
+        if (move < 0 && fuel < Math.abs(move)) {
+            move = -fuel;
+            fuel = 0;
+        } else if (move > 0 && fuel < Math.abs(move)) {
+            move = fuel;
+            fuel = 0;
+        } else if (fuel > Math.abs(move)) {
+            fuel-=Math.abs(move);
+        }
+
         if (rotation == 0) horizontalY += move;
         else if (rotation == 180) horizontalY -= move;
         else if (rotation == 90) horizontalX += move;
@@ -55,6 +68,6 @@ public class Tank {
     }
 
     public void printPosition() {
-        System.out.println("The Tank is at " + horizontalY + ", " + horizontalX + " now.");
+        System.out.println("The Tank is at " + horizontalX + ", " + horizontalY + " now.");
     }
 }
