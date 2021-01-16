@@ -1,8 +1,8 @@
 //QUESTION Нехватает рисунка танка на плосткости для однозначного понимания задания.
 public class Tank {
-    int horizontalX;
-    int horizontalY;
-    int rotation;
+    private int horizontalX;
+    private int horizontalY;
+    private int rotation;
 
     Tank() {
         horizontalX = 0;
@@ -10,18 +10,19 @@ public class Tank {
         rotation = 0;
     }
 
-    public Tank(int horizontalX, int horizontalY) {
+    Tank(int horizontalX, int horizontalY) {
         this.horizontalX = horizontalX;
         this.horizontalY = horizontalY;
     }
 
     Tank(int horizontalX, int horizontalY, int rotation) {
-        this(horizontalX,horizontalY);
+        this(horizontalX, horizontalY);
         this.rotation = rotation;
     }
 
     /**
      * @param move - axis offset units
+     * @return
      * @see Tank#goForward(int)
      * {@link #rotation}
      * Y axis

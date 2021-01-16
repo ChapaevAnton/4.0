@@ -10,6 +10,5 @@ public class App4 {
         tank.turnLeft();
         tank.goBackward(100);
         tank.printPosition();
-
     }
 }
