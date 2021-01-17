@@ -1,22 +1,55 @@
 //QUESTION Нехватает рисунка танка на плосткости для однозначного понимания задания.
 public class Tank {
+
+    private static final String MODEL = "T34";
+    private static int serialNumber = 1;
+
     private int horizontalX;
     private int horizontalY;
     private int rotation = 90;
     private int fuel;
+    private int serialNumberCurrent;
 
-    Tank() {
+    public Tank() {
         this(0, 0, 100);
     }
 
-    Tank(int horizontalX, int horizontalY) {
+    public Tank(int horizontalX, int horizontalY) {
         this(horizontalX, horizontalY, 100);
     }
 
-    Tank(int horizontalX, int horizontalY, int fuel) {
+    public Tank(int horizontalX, int horizontalY, int fuel) {
         this.horizontalX = horizontalX;
         this.horizontalY = horizontalY;
         this.fuel = fuel;
+        serialNumberCurrent = serialNumber++;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Tank %s-%d current position X%d:Y%d, fuel %d, turned on %d",
+                MODEL, serialNumberCurrent, horizontalX, horizontalY, fuel, rotation);
+    }
+
+    private void setPosition(int horizontalX, int horizontalY) {
+        this.horizontalX = horizontalX;
+        this.horizontalY = horizontalY;
+    }
+
+    private void setRotation(int rotation) {
+        this.rotation = rotation;
+    }
+
+    public int getRotation() {
+        return rotation;
+    }
+
+    public void setFuel(int fuel) {
+        this.fuel += fuel;
+    }
+
+    public int getFuel() {
+        return fuel;
     }
 
     /**
@@ -43,7 +76,7 @@ public class Tank {
             move = fuel;
             fuel = 0;
         } else if (fuel > Math.abs(move)) {
-            fuel-=Math.abs(move);
+            fuel -= Math.abs(move);
         }
 
         if (rotation == 0) horizontalY += move;
@@ -68,6 +101,8 @@ public class Tank {
     }
 
     public void printPosition() {
-        System.out.println("The Tank is at " + horizontalX + ", " + horizontalY + " now.");
+        System.out.println("The Tank " + MODEL + "-" + serialNumberCurrent + " is at " + horizontalX + ", " + horizontalY + " now.");
     }
+
+
 }
