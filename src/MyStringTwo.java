@@ -18,9 +18,9 @@ public class MyStringTwo {
 
     //TODO 4.3.2
     public static void searchText(){
-        String regex2="([Aa].{2}[Aa])";
+        String regex2="(\s{1,}+[Aa]{1}.{2}[Aa]{1})";
         Pattern pattern = Pattern.compile(regex2);
-        Matcher matcher = pattern.matcher("aba aba a!a abba adca abea abbbbbA");
+        Matcher matcher = pattern.matcher("abba aba a!a abba adca abea abbbbbAbba abba");
         int count = 0;
         while (matcher.find()) {
             int start = matcher.start();
