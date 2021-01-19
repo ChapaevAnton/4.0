@@ -1,5 +1,7 @@
+import java.io.IOException;
+
 public class App4 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
 //        // В (0;0) с fuel = 100
 //        Tank justTank = new Tank();
@@ -39,7 +41,9 @@ public class App4 {
 
 
         //TODO 4.3.2
-       // MyStringTwo.searchText();
+        //MyStringTwo.searchText();
+
+
 
     }
 }
