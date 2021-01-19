@@ -32,12 +32,12 @@ public class App4 {
 //        4-insert in the middle
 //        5-reverse
 //        6-setCharAt
-        for (int i = 1; i <= 6; i++) {
-            System.out.println("Type->" + i);
-            MyStringTwo.rowRaces(i, 50_000, "ABC");
-            MyStringTwo.rowRaces(i, 200_000, "ABC");
-            MyStringTwo.rowRaces(i, 1_000_000, "ABC");
-        }
+//        for (int i = 1; i <= 6; i++) {
+//            System.out.println("Type->" + i);
+//            MyStringTwo.rowRaces(i, 50_000, "ABC");
+//            MyStringTwo.rowRaces(i, 200_000, "ABC");
+//            MyStringTwo.rowRaces(i, 1_000_000, "ABC");
+//        }
         //TODO Test run CMD and set command
 //        System.out.println("RUN from JAWA!!!");
 //        Runtime runtime = Runtime.getRuntime();
@@ -49,7 +49,7 @@ public class App4 {
 
 
         //TODO 4.3.2
-        //MyStringTwo.searchText();
+        MyStringTwo.searchText();
 
         //System.in.read();
 

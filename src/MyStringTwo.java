@@ -16,11 +16,27 @@ public class MyStringTwo {
         return matcher.matches();
     }
 
-    //TODO 4.3.2
+    //TODO 4.3.2 - 4.3.6
     public static void searchText() {
-        String regex2 = "(\s{1,}+[Aa]{1}.{2}[Aa]{1})";
-        Pattern pattern = Pattern.compile(regex2);
-        Matcher matcher = pattern.matcher("abba aba a!a abba adca abea abbbbbAbba abba");
+        String regex2 = "(\s{1,}+[Aa]{1}.{2}[Aa]{1})";//4.3.2
+        String regex3 ="([Aa][Bb])"; //4.3.3
+        String regex4 ="(20\\d{2})"; //4.3.4
+        String regex5 = "(\\*[А-Яа-яЁё]+\\*)"; //4.3.5
+        String regex6 = "(\\b[Ss]\\w*[Ss]\\b)"; //4.3.6
+
+        String field1 ="abba aba a!a abba adca abea abbbbbAbba abba";
+        String field2 ="fskldjflksd2012rwerkjwekrj2021423423kjfksldjf2021 rwerwer20202000";
+        String field3 ="*-ки *должны* примыкать к *СЛОВУ*)апривапшвоапдл*плодвлоап**лвоадлыв*****алывдалоылв* *лдоывдалоыдвлоа*** *-***";
+        String field4 = """ 
+                Regular Expressions or Regex is an API for defining StringS patterns\
+                 that can be used for searching, manipulating and editing a text.\
+                 It is widely used to define a constraint on streqweqwe312312ings\
+                 such as a password. Regular Expressions SS s_s ss are provided under java.\
+                 util.regex package.sfdfs Sfdfdss sewoeiS""";
+
+
+        Pattern pattern = Pattern.compile(regex6);
+        Matcher matcher = pattern.matcher(field4);
         int count = 0;
         while (matcher.find()) {
             int start = matcher.start();
