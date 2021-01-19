@@ -17,15 +17,15 @@ public class MyStringTwo {
     }
 
     //TODO 4.3.2
-    public static void searchText(){
-        String regex2="(\s{1,}+[Aa]{1}.{2}[Aa]{1})";
+    public static void searchText() {
+        String regex2 = "(\s{1,}+[Aa]{1}.{2}[Aa]{1})";
         Pattern pattern = Pattern.compile(regex2);
         Matcher matcher = pattern.matcher("abba aba a!a abba adca abea abbbbbAbba abba");
         int count = 0;
         while (matcher.find()) {
             int start = matcher.start();
             int end = matcher.end();
-            System.out.printf("find position %d-%d-> %s\n",start,end,matcher.group(1));
+            System.out.printf("find position %d-%d-> %s\n", start, end, matcher.group(1));
             count++;
         }
         System.out.println(matcher.groupCount());
@@ -34,15 +34,17 @@ public class MyStringTwo {
     }
 
     //TODO 4.3.1
+
     /**
      * Testing the speed of work StringBuilder.
      *
      * @param operationsType - type of operations
      *                       <p>1-append
-     *                       <p>2-insert
-     *                       <p>3-insert in the middle
-     *                       <p>4-reverse
-     *                       <p>5-setCharAt
+     *                       <p>2-delete
+     *                       <p>3-insert
+     *                       <p>4-insert in the middle
+     *                       <p>5-reverse
+     *                       <p>6-setCharAt
      * @param repeat         - iteration count
      * @param str            - string to process
      * @author Smerdin Anton
@@ -54,10 +56,14 @@ public class MyStringTwo {
         for (int i = 0; i < repeat; i++) {
             switch (operationsType) {
                 case 1 -> stringBuilder.append(str);
-                case 2 -> stringBuilder.insert(0, str);
-                case 3 -> stringBuilder.insert(stringBuilder.length() / 2, str);
-                case 4 -> stringBuilder.reverse();
-                case 5 -> stringBuilder.setCharAt(0, 'Z');
+                case 2 -> {
+                    stringBuilder.delete(0, 1);
+                    stringBuilder=new StringBuilder(str);
+                }
+                case 3 -> stringBuilder.insert(0, str);
+                case 4 -> stringBuilder.insert(stringBuilder.length() / 2, str);
+                case 5 -> stringBuilder.reverse();
+                case 6 -> stringBuilder.setCharAt(0, 'Z');
             }
         }
         System.out.println(System.currentTimeMillis() - time);

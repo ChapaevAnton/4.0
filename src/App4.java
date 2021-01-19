@@ -24,19 +24,22 @@ public class App4 {
 
         //TODO 4.3.1
 //        1-append
-//        2-insert
-//        3-insert in the middle
-//        4-reverse
-//        5-setCharAt
-//        for (int i=1;i<=5;i++) {
-//            System.out.println("Type->"+i);
-//            MyStringTwo.rowRaces(i, 50_000, "ABC");
-//            MyStringTwo.rowRaces(i, 200_000, "ABC");
-//            MyStringTwo.rowRaces(i, 1_000_000, "ABC");
-//        }
+//        2-delete - when creating a new line
+//        3-insert
+//        4-insert in the middle
+//        5-reverse
+//        6-setCharAt
+        for (int i=1;i<=6;i++) {
+            System.out.println("Type->"+i);
+            MyStringTwo.rowRaces(i, 50_000, "ABC");
+            MyStringTwo.rowRaces(i, 200_000, "ABC");
+            MyStringTwo.rowRaces(i, 1_000_000, "ABC");
+        }
+
+
 
         //TODO 4.3.2
-        MyStringTwo.searchText();
+       // MyStringTwo.searchText();
 
     }
 }
