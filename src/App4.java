@@ -1,7 +1,8 @@
+import java.io.Console;
 import java.io.IOException;
 
 public class App4 {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
 //        // В (0;0) с fuel = 100
 //        Tank justTank = new Tank();
@@ -31,18 +32,26 @@ public class App4 {
 //        4-insert in the middle
 //        5-reverse
 //        6-setCharAt
-        for (int i=1;i<=6;i++) {
-            System.out.println("Type->"+i);
+        for (int i = 1; i <= 6; i++) {
+            System.out.println("Type->" + i);
             MyStringTwo.rowRaces(i, 50_000, "ABC");
             MyStringTwo.rowRaces(i, 200_000, "ABC");
             MyStringTwo.rowRaces(i, 1_000_000, "ABC");
         }
-
+        //TODO Test run CMD and set command
+//        System.out.println("RUN from JAWA!!!");
+//        Runtime runtime = Runtime.getRuntime();
+//        Process p = runtime.exec("cmd.exe /c start cmd /k \" java -version \"");
+//
+//        ProcessBuilder builder = new ProcessBuilder();
+//        builder.command("cmd.exe", "/c", "start");
+//        Process process = builder.start();
 
 
         //TODO 4.3.2
         //MyStringTwo.searchText();
 
+        //System.in.read();
 
 
     }
