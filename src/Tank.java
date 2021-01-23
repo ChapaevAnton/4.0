@@ -1,3 +1,4 @@
+//TODO Test ssh key
 //QUESTION Нехватает рисунка танка на плосткости для однозначного понимания задания.
 public class Tank {
 
