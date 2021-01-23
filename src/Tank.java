@@ -1,4 +1,5 @@
 //TODO Test ssh key
+//TODO Test git push console
 //QUESTION Нехватает рисунка танка на плосткости для однозначного понимания задания.
 public class Tank {
 
